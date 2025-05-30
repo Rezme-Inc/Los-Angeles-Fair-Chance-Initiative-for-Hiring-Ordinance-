@@ -60,13 +60,13 @@ export default function AssessmentEvaluate() {
   const [showWOTCSigningScreen, setShowWOTCSigningScreen] = useState(false);
   const [steps, setSteps] = useState<Step[]>([
     { id: 1, title: "Confirm Conditional Offer", completed: false },
-    { id: 2, title: "Validate Document Basis", completed: false },
+    { id: 2, title: "Background Report Review", completed: false },
     { id: 3, title: "Direct Job-Relation Inquiry", completed: false },
     { id: 4, title: "Time Elapsed Analysis", completed: false },
     { id: 5, title: "Evidence of Rehabilitation", completed: false },
     { id: 6, title: "Assessment Summary", completed: false },
-    { id: 7, title: "Candidate Notification", completed: false },
-    { id: 8, title: "Final Decision", completed: false },
+    { id: 7, title: "Individualized Assessments Review", completed: false },
+    { id: 8, title: "Final Decision & Notification of Rights", completed: false },
   ]);
 
   const [hasConditionalOffer, setHasConditionalOffer] = useState<string | null>(null);
@@ -278,122 +278,222 @@ export default function AssessmentEvaluate() {
       case 1:
         return (
           <div className="space-y-4">
-            <h3 className="font-semibold">SEC. 4904 (c)</h3>
+            <h3 className="font-semibold"></h3>
             <p className="text-sm text-muted-foreground">
-              The Employer shall not require applicants or potential applicants for employment, or employees, to disclose, and shall not inquire into or discuss, their Conviction History or an Unresolved Arrest until after a conditional offer of employment. The Employer may not itself conduct or obtain from a third party a Background Check until after a conditional offer of employment.
+              An employer can only ask about criminal history after extending a conditional job offer. If an employer asks about criminal history too early, they cannot later use a candidate's non-response or omission as grounds for withdrawing a job offer or taking negative action.
             </p>
           </div>
         );
       case 2:
         return (
           <div className="space-y-4">
-            <h3 className="font-semibold">SEC. 4904 subsections (a)(1)-(7)</h3>
+            <h3 className="font-semibold"></h3>
             <p className="text-sm text-muted-foreground mb-2">
-              The FCO prohibits covered employers from ever considering the following:
+              Employers are strictly prohibited from inquiring about or using certain types of criminal history when making employment decisions.
+            </p>
+            <p className="text-sm text-muted-foreground mb-2">
+              This includes:
             </p>
             <ul className="text-sm text-muted-foreground space-y-2">
-              <li>• An arrest not leading to a conviction, except for unresolved arrests</li>
-              <li>• Participation in a diversion or deferral of judgment program</li>
-              <li>• A conviction that has been dismissed, expunged, otherwise invalidated, or inoperative</li>
-              <li>• A conviction in the juvenile justice system</li>
-              <li>• An offense other than a felony or misdemeanor, such as an infraction</li>
-              <li>• A conviction that is more than 7 years old (unless the position being considered supervises minors or dependent adults)</li>
-              <li>• A conviction for decriminalized conduct, including the non-commercial use and cultivation of cannabis</li>
+              <li>• Arrests not resulting in conviction (except limited exceptions under CA Labor Code § 432.7)</li>
+              <li>• Participation in pretrial or posttrial diversion or deferred judgment programs</li>
+              <li>• Convictions that have been sealed, expunged, dismissed, pardoned, or otherwise rendered legally inoperative</li>
+              <li>• Any juvenile court proceedings</li>
+              <li>• Non-felony marijuana possession convictions older than two years</li>
+              <li>• Any conviction older than seven years from the date of disposition</li>
             </ul>
           </div>
         );
       case 3:
         return (
           <div className="space-y-4">
-            <h3 className="font-semibold">Section 4093 Definitions</h3>
+            <h3 className="font-semibold"></h3>
             <p className="text-sm text-muted-foreground mb-4">
-              Directly-Related Conviction in the employment context shall mean that the conduct for which a person was convicted or that is the subject of an Unresolved Arrest has a direct and specific negative bearing on that person's ability to perform the duties or responsibilities necessarily related to the employment position. In determining whether the conviction or Unresolved Arrest is directly related to the employment position, the Employer shall consider whether the employment position offers the opportunity for the same or a similar offense to occur and whether circumstances leading to the conduct for which the person was convicted or that is the subject of an Unresolved Arrest will recur in the employment position.
+              Before rejecting a candidate based on criminal history, employers must evaluate:
             </p>
-            <h3 className="font-semibold">SEC. 4904 (f)</h3>
-            <p className="text-sm text-muted-foreground">
-              In making an employment decision based on an applicant's or employee's Conviction History, an Employer shall conduct an individualized assessment, considering only Directly-Related Convictions, the time that has elapsed since the Conviction or Unresolved Arrest, and any evidence of inaccuracy or Evidence of Rehabilitation or Other Mitigating Factors.
-            </p>
+            <ul className="text-sm text-muted-foreground space-y-2">
+              <li>• The seriousness and context of the offense</li>
+              <li>• Time passed since the offense or sentence</li>
+              <li>• Relevance of the offense to the job duties</li>
+              <li>• Any evidence of rehabilitation or mitigating factors the candidate provides</li>
+            </ul>
           </div>
         );
       case 4:
         return (
           <div className="space-y-4">
-            <h3 className="font-semibold">Time Elapsed Restrictions</h3>
+            <h3 className="font-semibold"></h3>
             <p className="text-sm text-muted-foreground mb-2">
-              The Fair Chance Ordinance (FCO) prohibits covered employers from ever considering the following:
+              Evidence of Rehabilitation or Mitigating Circumstances" may include, but is not limited to:
             </p>
-            <p className="text-sm text-muted-foreground mb-4">
-              A conviction that is more than 7 years old (unless the position being considered supervises minors or dependent adults).
-            </p>
-            <h3 className="font-semibold">SEC. 4904. (5)</h3>
-            <p className="text-sm text-muted-foreground">
-              A Conviction that is more than seven years old, the date of Conviction being the date of sentencing, except that this restriction and any limitations imposed in this Article 49 based on the limitation in this subsection (a)(5) shall not apply where the applicant or employee is or will be (A) providing services to or have supervisory or disciplinary authority over a minor, (B) providing services to or have supervisory or disciplinary authority over a "dependent adult," as that phrase is defined in California Welfare and Institutions Code Section 15610.23 or any successor state law, or (C) providing support services or care to or has supervisory authority over a person 65 years or older;
-            </p>
+            <ul className="text-sm text-muted-foreground space-y-2">
+              <li>• Consideration of the age of the person at the time of the Conviction</li>
+              <li>• The time that has passed since the offense or conduct and/or completion of the sentence</li>
+            </ul>
           </div>
         );
       case 5:
         return (
           <div className="space-y-4">
-            <h3 className="font-semibold">SEC. 4903. DEFINITIONS</h3>
+            <h3 className="font-semibold"></h3>
             <div className="space-y-6">
+              <p className="text-sm text-muted-foreground">
+                Employers are required to consider a wide range of factors that demonstrate rehabilitation or provide context for an individual's criminal history. These may include:
+              </p>
+
               <div>
-                <h4 className="text-sm font-medium mb-2">Rehabilitation Evidence</h4>
+                <h4 className="text-sm font-medium mb-2">Compliance with parole or probation</h4>
                 <ul className="text-sm text-muted-foreground space-y-2">
-                  <li>• Satisfactory compliance with parole/probation terms</li>
-                  <li>• Post-conviction employer recommendations</li>
-                  <li>• Educational achievements or vocational training</li>
-                  <li>• Completion of/participation in rehabilitative treatment</li>
-                  <li>• Letters of recommendation from qualified observers</li>
-                  <li>• Age at time of conviction</li>
+                  <li>• Satisfactory completion of all terms and conditions</li>
+                  <li>• Note: Inability to pay fines, fees, or restitution due to indigence does not count as noncompliance</li>
                 </ul>
               </div>
-              
+
               <div>
-                <h4 className="text-sm font-medium mb-2">Voluntary Mitigating Factors</h4>
+                <h4 className="text-sm font-medium mb-2">Employment history</h4>
                 <ul className="text-sm text-muted-foreground space-y-2">
-                  <li>• Coercive conditions preceding offense</li>
-                  <li>• History of intimate physical/emotional abuse</li>
-                  <li>• Untreated substance abuse</li>
-                  <li>• Untreated mental illness</li>
+                  <li>• Length and consistency of employment before and after the offense</li>
+                </ul>
+              </div>
+
+              <div>
+                <h4 className="text-sm font-medium mb-2">Age at the time of conviction</h4>
+                <ul className="text-sm text-muted-foreground space-y-2">
+                  <li>• Younger age at the time of the offense may weigh in favor of rehabilitation</li>
+                </ul>
+              </div>
+
+              <div>
+                <h4 className="text-sm font-medium mb-2">Employer recommendations</h4>
+                <ul className="text-sm text-muted-foreground space-y-2">
+                  <li>• Especially those relating to performance and conduct in post-conviction employment</li>
+                </ul>
+              </div>
+
+              <div>
+                <h4 className="text-sm font-medium mb-2">Educational or vocational training</h4>
+                <ul className="text-sm text-muted-foreground space-y-2">
+                  <li>• Achievements since the conviction, including while incarcerated</li>
+                </ul>
+              </div>
+
+              <div>
+                <h4 className="text-sm font-medium mb-2">Rehabilitative treatment program participation</h4>
+                <ul className="text-sm text-muted-foreground space-y-2">
+                  <li>• Such as alcohol or drug treatment</li>
+                </ul>
+              </div>
+
+              <div>
+                <h4 className="text-sm font-medium mb-2">Self-improvement efforts, including:</h4>
+                <ul className="text-sm text-muted-foreground space-y-2">
+                  <li>a. Job training</li>
+                  <li>b. Counseling</li>
+                  <li>c. Community service</li>
+                </ul>
+              </div>
+
+              <div>
+                <h4 className="text-sm font-medium mb-2">Supporting documentation, such as:</h4>
+                <p className="text-sm text-muted-foreground mb-2">a. Letters of recommendation from:</p>
+                <ul className="text-sm text-muted-foreground space-y-2 pl-4">
+                  <li>• Community organizations</li>
+                  <li>• Counselors or case managers</li>
+                  <li>• Teachers or community leaders</li>
+                  <li>• Parole/probation officers</li>
+                </ul>
+                <p className="text-sm text-muted-foreground mt-2">b. Other written materials that demonstrate rehabilitation or mitigating circumstances</p>
+              </div>
+
+              <div>
+                <h4 className="text-sm font-medium mb-2">Voluntarily provided mitigating factors, which may include:</h4>
+                <ul className="text-sm text-muted-foreground space-y-2">
+                  <li>a. Homelessness</li>
+                  <li>b. Trauma</li>
+                  <li>c. Domestic or dating violence</li>
+                  <li>d. Sexual assault</li>
+                  <li>e. Human trafficking</li>
+                  <li>f. Duress or coercive conditions</li>
+                  <li>g. Intimate partner abuse (physical or emotional)</li>
+                  <li>h. Untreated substance abuse or mental illness</li>
                 </ul>
               </div>
             </div>
           </div>
         );
-      case 7:
-        return (
-          <div className="space-y-4">
-            <h3 className="font-semibold">SEC. 4904 (h)</h3>
-            <p className="text-sm text-muted-foreground">
-              If, within seven days of the date that the notice described in subsection (g) is provided by the Employer to the applicant or employee, the applicant or employee gives the Employer notice, orally or in writing, of evidence of the inaccuracy of the item or items of Conviction History or any Evidence of Rehabilitation or Other Mitigating Factors, the Employer shall delay any Adverse Action for a reasonable period after receipt of the information and during that time shall reconsider the prospective Adverse Action in light of the information.
-            </p>
-          </div>
-        );
       case 6:
         return (
           <div className="space-y-4">
-            <h3 className="font-semibold">SEC. 4910. EMPLOYER RECORDS</h3>
+            <h3 className="font-semibold"></h3>
             <p className="text-sm text-muted-foreground">
-              (a) An Employer shall retain records of employment, application forms, and other pertinent data and records required under this Article, for a period of three years, and shall allow the OLSE access to such records, with appropriate notice and at a mutually agreeable time, to monitor compliance with the requirements of this Article.
+              If the employer plans to withdraw an offer based on criminal history, they must first send a written notice by mail and email (if possible), stating:
             </p>
-            <p className="text-sm text-muted-foreground">
-              (d) Where an Employer does not maintain or retain adequate records documenting compliance with this Article or does not allow the OLSE reasonable access to such records, it shall be presumed that the Employer did not comply with this Article, absent clear and convincing evidence otherwise.
+            <ul className="text-sm text-muted-foreground space-y-2">
+              <li>• The intent to take adverse action</li>
+              <li>• The applicant's right to respond</li>
+              <li>• The timeline for response and acceptable types of evidence, such as disputes to the record or evidence of rehabilitation</li>
+            </ul>
+          </div>
+        );
+      case 7:
+        return (
+          <div className="space-y-4">
+            <h3 className="font-semibold"></h3>
+            <p className="text-sm text-muted-foreground mb-4">
+              The Initial Individualized Assessment must include at a minimum, consideration of the following factors:
             </p>
+            <div className="space-y-4">
+              <div>
+                <p className="text-sm text-muted-foreground font-medium">a. The nature and gravity of the offense or conduct, including but not limited to:</p>
+                <ul className="text-sm text-muted-foreground space-y-2 pl-4">
+                  <li>• Whether the harm was to property or people</li>
+                  <li>• The degree or severity of the harm or offense</li>
+                  <li>• The age of the Applicant or Employee when the conduct occurred</li>
+                  <li>• The permanence of the harm or offense</li>
+                </ul>
+              </div>
+
+              <div>
+                <p className="text-sm text-muted-foreground font-medium">b. The time that has passed since the offense or conduct and/or completion of the sentence</p>
+              </div>
+
+              <div>
+                <p className="text-sm text-muted-foreground font-medium">c. The nature of the Employment position sought or held, including consideration of:</p>
+                <ul className="text-sm text-muted-foreground space-y-2 pl-4">
+                  <li>• The specific duties of the job</li>
+                  <li>• Whether the Employment position offers the opportunity for the same or a similar offense to occur</li>
+                  <li>• Whether circumstances leading to the conduct for which the person was convicted or that is the subject of an Unresolved Arrest will recur in the Employment position</li>
+                </ul>
+              </div>
+
+              <div>
+                <p className="text-sm text-muted-foreground font-medium">d. Evidence of Rehabilitation or Mitigating Circumstances</p>
+                <p className="text-sm text-muted-foreground">
+                  If the Applicant or Employee voluntarily provides to the Employer any Evidence of Rehabilitation or Mitigating Circumstances before or during the Initial Individualized Assessment, that evidence must also be considered as part of the Initial Individualized Assessment.
+                </p>
+              </div>
+            </div>
           </div>
         );
       case 8:
         return (
           <div className="space-y-4">
-            <h3 className="font-semibold">SEC. 4904 (f), (g), (i)</h3>
-            <p className="text-sm text-muted-foreground">
-              In making an employment decision based on an applicant's or employee's Conviction History, an Employer shall conduct an individualized assessment, considering only Directly-Related Convictions, the time that has elapsed since the Conviction or Unresolved Arrest, and any evidence of inaccuracy or Evidence of Rehabilitation or Other Mitigating Factors.
+            <h3 className="font-semibold"></h3>
+            <p className="text-sm text-muted-foreground mb-4">
+              The Employer shall consider all information and documents, whether written or oral, timely submitted by the Applicant or Employee pursuant to this Section before making a final decision or taking an Adverse Action. If the employer decides to rescind the offer after the second assessment, they must send a written final notice by both regular and electronic mail (if possible), stating the final decision and related rationale.
             </p>
-            <p className="text-sm text-muted-foreground mt-2">
-              If an Employer intends to base an Adverse Action on an item or items in the applicant or employee's Conviction History, prior to taking any Adverse Action the Employer shall provide the applicant or employee with a copy of the Background Check Report, if any, and shall notify the applicant or employee of the prospective Adverse Action and the items forming the basis for the prospective Adverse Action.
-            </p>
-            <p className="text-sm text-muted-foreground mt-2">
-              Upon taking any final Adverse Action based upon the Conviction History of an applicant or employee, an Employer shall notify the applicant or employee of the final Adverse Action.
-            </p>
+            
+            <div className="mt-6">
+              <h4 className="font-semibold mb-2">Violations can result in escalating fines per applicant:</h4>
+              <ul className="text-sm text-muted-foreground space-y-2">
+                <li>• First violation: up to $5,000</li>
+                <li>• Second violation: up to $10,000</li>
+                <li>• Third and subsequent violations: up to $20,000</li>
+              </ul>
+              <p className="text-sm text-muted-foreground mt-2">
+                At least 50% of the fines go to the harmed applicant or employee.
+              </p>
+            </div>
           </div>
         );
       default:
@@ -579,7 +679,7 @@ export default function AssessmentEvaluate() {
                 <h4 className="text-sm font-medium mb-2">Industry Credentials</h4>
                 <ul className="text-sm text-muted-foreground space-y-1">
                   <li>• OSHA 10‑Hour General Industry (Mar 2020)</li>
-                  <li>• NY Dept. of Public Health – Food Handler Certificate (valid through Apr 2023)</li>
+                  <li>• CA Dept. of Public Health – Food Handler Certificate (valid through Apr 2023)</li>
                 </ul>
               </div>
 
@@ -1487,7 +1587,6 @@ export default function AssessmentEvaluate() {
           return (
             <div className="space-y-6">
               <h2 className="text-2xl font-bold">WOTC Tax Credit Details</h2>
-              
               <div className="bg-green-50 dark:bg-green-900/20 p-6 rounded-lg border border-green-200 dark:border-green-800">
                 <h3 className="text-xl font-semibold text-green-800 dark:text-green-300 mb-2">
                   Tax Credit Value
@@ -1496,7 +1595,6 @@ export default function AssessmentEvaluate() {
                   You are eligible for <span className="font-bold">40% of first-year wages</span> (up to $6,000) if the person works at least 400 hours as part of a WOTC targeted group.
                 </p>
               </div>
-
               <Card className="p-6 bg-secondary">
                 <div className="flex items-start gap-3">
                   <Info className="h-5 w-5 mt-1 flex-shrink-0" />
@@ -1514,7 +1612,6 @@ export default function AssessmentEvaluate() {
                   </div>
                 </div>
               </Card>
-
               <div className="flex justify-end mt-6">
                 <Button onClick={handleSignAndSend}>
                   SIGN & SEND FOR REVIEW
@@ -1523,7 +1620,6 @@ export default function AssessmentEvaluate() {
             </div>
           );
         }
-
         return (
           <div className="space-y-6">
             <h2 className="text-2xl font-bold">Final Decision</h2>
